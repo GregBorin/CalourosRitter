@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -21,12 +21,68 @@
   <!-- Custom styles for this template -->
   <link href="../css/resume.min.css" rel="stylesheet">
 
+  <link href='../vendor/core/main.css' rel='stylesheet' />
+  <link href='../vendor/timegrid/main.css' rel='stylesheet' />
+  <link href='../vendor/daygrid/main.css' rel='stylesheet' />
+  <link href='../vendor/list/main.css' rel='stylesheet' />
+  <script src='../vendor/core/main.js'></script>
+  <script src='../vendor/core/locales-all.js'></script>
+  <script src='../vendor/interaction/main.js'></script>
+  <script src='../vendor/daygrid/main.js'></script>
+  <script src='../vendor/list/main.js'></script>
+  <script src='../vendor/timegrid/main.js'></script>
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+
+        locale: 'pt-br',
+        plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid'],
+        header: {
+          left: 'prevYear,prev,next,nextYear today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        navLinks: true,
+        editable: true,
+        eventLimit: true,
+
+        loading: function (bool) {
+          document.getElementById('loading').style.display =
+            bool ? 'block' : 'none';
+        }
+
+      });
+
+      calendar.render();
+    });
+
+  </script>
+  <style>
+    #loading {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
+
+
 </head>
 
 <body id="page-top">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+    <a class="navbar-brand js-scroll-trigger" href="../index.html">
       <span class="d-block d-lg-none">Uniritter</span>
       <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../img/uniritter_logo.png" alt="">
@@ -45,16 +101,10 @@
           <a class="nav-link js-scroll-trigger" href="#areas">Áreas de Atuação</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <a class="nav-link js-scroll-trigger" href="#calendario">Calendário de Eventos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          <a class="nav-link js-scroll-trigger" href="#comment">Comentários</a>
         </li>
       </ul>
     </div>
@@ -99,69 +149,58 @@
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Áreas de Atuação</h3>
-            <div class="subheading mb-3">Onde atua o analista?</div>
-            <p>O mercado de trabalho para analistas de sistemas, como são chamados os profissionais desta área, 
-              é bastante amplo. Isso porque praticamente qualquer tipo de empresa utiliza sistemas informatizados 
-              para funcionar, seja em suas atividades de gestão, venda, pós-venda ou processos de fabricação.
+            <h3 class="mb-0">Lorem ipsum</h3>
+            <div class="subheading mb-3">dolor sit amet?</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis augue in rutrum tempor. 
+              Sed vitae est a urna consequat finibus ac at nulla. Vestibulum neque mauris, fermentum at massa eu, 
+              fringilla ullamcorper lacus. Donec eget convallis odio. Integer eu aliquam lorem. Cras sed imperdiet enim, 
+              id pulvinar orci. Quisque a urna varius, eleifend nisi vitae, ornare turpis.
             </p>
-            <p>O principal objetivo deste profissional é apresentar soluções para algum problema existente através de 
-              sistemas de informação. Para isto, é fundamental que o analista de sistemas entenda sobre as atividades 
-              desempenhadas pelo seu cliente e quais as suas dificuldades e necessidades. É através deste estudo 
-              sobre o cliente que o analista poderá planejar e implementar as soluções mais adequadas em cada situação.
+            <p>Nullam lobortis urna sit amet nibh gravida, eget suscipit mauris faucibus. 
+              Nunc convallis tincidunt lacus eu sagittis. Phasellus porttitor sem vel elementum rutrum. 
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+              Sed mattis aliquet odio, a volutpat velit lacinia at. Etiam gravida nec magna in venenatis. 
+              Nunc malesuada aliquam erat a commodo. Mauris porttitor non dolor a hendrerit.
             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">March 2013 - Present</span>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Desenvolvimento de Software</h3>
-            <div class="subheading mb-3">Analista de Sistemas</div>
-            <p>A área de desenvolvimento de programas computacionais talvez seja a mais procurada por empresas e é a 
-              que apresenta a maior carência de profissionais especializados no mercado.</p>
-              <p>Para poder desenvolver um software, o analista de sistemas precisa entender sobre as necessidades dos 
-                futuros usuários e o resultado que se deseja obter com aquele programa. 
-                Ele utiliza códigos e linguagens de programação para criar uma sequência lógica de instruções capaz 
-                de apresentar os resultados desejados.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2011 - March 2013</span>
+            <h3 class="mb-0">Nam a lectus sem</h3>
+            <div class="subheading mb-3">Orci varius natoque</div>
+            <p>Nam a lectus sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+              Etiam in facilisis quam. Nam non vehicula urna. Pellentesque at molestie urna, vel scelerisque metus.</p>
+            <p>Morbi sagittis blandit interdum. Aenean nulla lectus, ullamcorper vel sagittis a, pretium a felis. 
+              Nullam aliquet venenatis ullamcorper. Donec ultrices, erat non consequat fringilla, leo orci pellentesque est, 
+              eget condimentum magna turpis id mi. </p>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Administração de Banco de Dados</h3>
-            <div class="subheading mb-3">Analista de Dados</div>
-            <p>Para que programas computacionais funcionem e apresentem as respostas esperadas é preciso que 
-              tenham um banco de dados. O analista de sistemas desenvolve estes bancos de dados, realiza sua 
-              instalação e configuração junto ao software criado.
+            <h3 class="mb-0">Ut pulvinar eget nibh et pulvinar</h3>
+            <div class="subheading mb-3">Integer et iaculis ipsum</div>
+            <p>Suspendisse ac lorem in libero tempus congue a sit amet enim. Proin id leo lectus. 
+              Cras sed consequat ex. Aliquam lacinia porta eros vitae scelerisque. Quisque molestie lobortis scelerisque.
             </p>
-            <p>O gerenciamento destas informações se dá através do acompanhamento e monitoramento de seu uso para 
-              identificar quando é necessário fazer atualizações, manutenções e melhorias.
+            <p>Donec tempus purus sed sagittis fermentum. Aliquam facilisis tellus porta ante ullamcorper, 
+              sit amet pharetra nibh convallis. Integer vel molestie urna, at consequat dui. In interdum, 
+              arcu nec posuere sollicitudin, nunc eros rhoncus massa, non semper eros quam nec elit.
             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2010 - December 2011</span>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
           <div class="resume-content">
-            <h3 class="mb-0">Administração de Redes</h3>
-            <div class="subheading mb-3">Analista de Redes</div>
-            <p>Como administrador de redes, o analista de sistemas é responsável por toda a infraestrutura de TI 
-              de uma empresa. Ele realiza instalações, parametrizações e configurações de sistemas informatizados. 
-              Também realiza atividades com o intuito de garantir a segurança das informações compartilhadas naquela 
-              determinada rede.
+            <h3 class="mb-0">Etiam at eros metus</h3>
+            <div class="subheading mb-3">Mauris vestibulum lacus</div>
+            <p>Etiam at eros metus. Mauris vestibulum lacus quis lorem suscipit, vitae consequat nunc rhoncus. 
+              Aenean pretium pulvinar lorem at hendrerit. Praesent sit amet elit placerat, rutrum sapien nec, luctus velit. 
+              Sed ac erat ullamcorper, maximus tortor at, dignissim est. Nulla congue lectus at arcu tristique, 
+              vel condimentum lacus ullamcorper.
             </p>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">September 2008 - June 2010</span>
-          </div>
         </div>
 
       </div>
@@ -170,149 +209,49 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">University of Colorado Boulder</h3>
-            <div class="subheading mb-3">Bachelor of Science</div>
-            <div>Computer Science - Web Development Track</div>
-            <p>GPA: 3.23</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2006 - May 2010</span>
-          </div>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="calendario">
+        <div class="w-100">
+          <h2 class="mb-5">Calendário de Eventos</h2>
+  
+          <div id='loading'>loading...</div>
+  
+          <div id='calendar'></div>
+  
         </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">James Buchanan High School</h3>
-            <div class="subheading mb-3">Technology Magnet Program</div>
-            <p>GPA: 3.56</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2002 - May 2006</span>
-          </div>
+      </section>
+  
+      <hr class="m-0">
+  
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="comment">
+        <div class="w-100">
+          <h2 class="mb-5">Comentários</h2>
+          <form>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="inputAssunto">Assunto</label>
+                <input type="text" class="form-control" id="inputAssunto" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="inputComentario">Comentário</label>
+                <textarea class="form-control" id="inputComentario" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </form>
         </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-gulp"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-grunt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
-        </ul>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier
-          and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and
-          kayaking.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows,
-          I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements
-          in the front-end web development world.</p>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Google Analytics Certified Developer</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Mobile Web Specialist - Google Certification</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            2<sup>nd</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - James Buchanan High School - Hackathon 2006</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            3<sup>rd</sup>
-            Place - James Buchanan High School - Hackathon 2005</li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
   </div>
 
