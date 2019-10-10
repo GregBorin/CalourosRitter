@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
-  <meta charset="utf-8">
+  <meta charset=" utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -20,6 +20,61 @@
 
   <!-- Custom styles for this template -->
   <link href="../css/resume.min.css" rel="stylesheet">
+
+  <link href='../vendor/core/main.css' rel='stylesheet' />
+  <link href='../vendor/timegrid/main.css' rel='stylesheet' />
+  <link href='../vendor/daygrid/main.css' rel='stylesheet' />
+  <link href='../vendor/list/main.css' rel='stylesheet' />
+  <script src='../vendor/core/main.js'></script>
+  <script src='../vendor/core/locales-all.js'></script>
+  <script src='../vendor/interaction/main.js'></script>
+  <script src='../vendor/daygrid/main.js'></script>
+  <script src='../vendor/list/main.js'></script>
+  <script src='../vendor/timegrid/main.js'></script>
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        
+        locale: 'pt-br',
+        plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid'],
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        navLinks: true, 
+        editable: true,
+        eventLimit: true,
+        
+        loading: function (bool) {
+          document.getElementById('loading').style.display =
+            bool ? 'block' : 'none';
+        }
+
+      });
+
+      calendar.render();
+    });
+
+  </script>
+  <style>
+    #loading {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
 
 </head>
 
@@ -51,10 +106,10 @@
           <a class="nav-link js-scroll-trigger" href="#bio">Biografia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+          <a class="nav-link js-scroll-trigger" href="#calendario">Calendário de Eventos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          <a class="nav-link js-scroll-trigger" href="#comment">Comentários</a>
         </li>
       </ul>
     </div>
@@ -434,9 +489,9 @@
             <div class="subheading mb-3">Michael C. Feathers</div>
             <p>
               O livro trata do desenvolvimento ágil de software, com foco na criação de códigos limpos
-              e em como o desenvolvimento incremental é importante na indústria de software. 
-              É um livro para desenvolvedores que trabalham com manutenção, debugging e 
-              também desenvolvendo códigos do zero. 
+              e em como o desenvolvimento incremental é importante na indústria de software.
+              É um livro para desenvolvedores que trabalham com manutenção, debugging e
+              também desenvolvendo códigos do zero.
             </p>
           </div>
         </div>
@@ -446,10 +501,10 @@
             <h3 class="mb-0"> Design Patterns</h3>
             <div class="subheading mb-3">Ralph Johnson, Erich Gamma, John Vlissides e Richard Helm</div>
             <p>
-              O livro traz 23 padrões de design para sistemas contendo soluções simples e 
-              sucintas para os problemas mais comuns de engenharia de software. O design de 
-              software e a arquitetura de sistemas é um ponto chave para a criação de bons programas. 
-              Saber as soluções para os problemas que certamente irão surgir é um diferencial importante. 
+              O livro traz 23 padrões de design para sistemas contendo soluções simples e
+              sucintas para os problemas mais comuns de engenharia de software. O design de
+              software e a arquitetura de sistemas é um ponto chave para a criação de bons programas.
+              Saber as soluções para os problemas que certamente irão surgir é um diferencial importante.
             </p>
           </div>
         </div>
@@ -459,8 +514,8 @@
             <h3 class="mb-0">Clean Code</h3>
             <div class="subheading mb-3">Robert C. Martin</div>
             <p>
-              Um método pragmático para escrever códigos do zero de forma eficaz e robusta. 
-              O título, que na versão em português ficou “Código limpo“, é bem sugestivo. 
+              Um método pragmático para escrever códigos do zero de forma eficaz e robusta.
+              O título, que na versão em português ficou “Código limpo“, é bem sugestivo.
             </p>
           </div>
         </div>
@@ -470,9 +525,9 @@
             <h3 class="mb-0">Java Concurrency in Practice</h3>
             <div class="subheading mb-3">Brian Goetz e Tim Peierls</div>
             <p>
-              A programação concorrente é um paradigma de programação que tem aumentado de popularidade. 
-              Trata-se de programar e desenvolver softwares que façam uso da execução 
-              simultânea (daí o nome concorrente) de várias tarefas. No livro de Brian Goetz, 
+              A programação concorrente é um paradigma de programação que tem aumentado de popularidade.
+              Trata-se de programar e desenvolver softwares que façam uso da execução
+              simultânea (daí o nome concorrente) de várias tarefas. No livro de Brian Goetz,
               esse paradigma é aplicado à linguagem de programação mais utilizada no mundo.
             </p>
           </div>
@@ -483,8 +538,8 @@
             <h3 class="mb-0">Domain Driven Design</h3>
             <div class="subheading mb-3">Eric Evans</div>
             <p>
-              As melhores técnicas de como incorporar esse tipo de modelagem no desenvolvimento de software. 
-              O livro contém um vasto acervo de padrões baseados em experiências do autor ao longo de seus 
+              As melhores técnicas de como incorporar esse tipo de modelagem no desenvolvimento de software.
+              O livro contém um vasto acervo de padrões baseados em experiências do autor ao longo de seus
               mais de 20 anos de atuação com desenvolvimento e engenharia de software usando Orientação a Objetos.
             </p>
           </div>
@@ -495,7 +550,7 @@
             <h3 class="mb-0">JavaScript</h3>
             <div class="subheading mb-3">Douglas Crockford</div>
             <p>
-              O livro cobre os principais assuntos da linguagem como: sintaxe, objetos, funções, herança e 
+              O livro cobre os principais assuntos da linguagem como: sintaxe, objetos, funções, herança e
               vários outros mais.
             </p>
           </div>
@@ -506,62 +561,86 @@
             <h3 class="mb-0">Code complete</h3>
             <div class="subheading mb-3">Steve McConnell</div>
             <p>
-              Manual de melhores práticas do desenvolvimento de software, incluindo design e boas técnicas de 
-              programação. Existe uma primeira versão, voltada mais para programação básica. 
+              Manual de melhores práticas do desenvolvimento de software, incluindo design e boas técnicas de
+              programação. Existe uma primeira versão, voltada mais para programação básica.
             </p>
           </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="resume-content">
-              <h3 class="mb-0">Refactoring</h3>
-              <div class="subheading mb-3">Martin Fowler e Kent Beck</div>
-              <p>
-                Fundadores do Extreme Programming, este livro é uma obra focada na refatoração, 
-                um dos princípios mais importantes de uma das metodologias ágeis mais famosas e populares no mundo. 
-                Saber refatorar códigos de forma adequada e extraindo o máximo do software é o que os 
-                autores buscam ensinar aos leitores. Kent Beck, um dos autores, é famoso também por 
-                seu principal livro sobre XP – Extreme Programming Explained: Embrace. 
-                Essa metodologia ágil é, ao lado do Scrum, uma das mais populares do mundo.
-              </p>
-            </div>
+          <div class="resume-content">
+            <h3 class="mb-0">Refactoring</h3>
+            <div class="subheading mb-3">Martin Fowler e Kent Beck</div>
+            <p>
+              Fundadores do Extreme Programming, este livro é uma obra focada na refatoração,
+              um dos princípios mais importantes de uma das metodologias ágeis mais famosas e populares no mundo.
+              Saber refatorar códigos de forma adequada e extraindo o máximo do software é o que os
+              autores buscam ensinar aos leitores. Kent Beck, um dos autores, é famoso também por
+              seu principal livro sobre XP – Extreme Programming Explained: Embrace.
+              Essa metodologia ágil é, ao lado do Scrum, uma das mais populares do mundo.
+            </p>
           </div>
+        </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-              <div class="resume-content">
-                <h3 class="mb-0">Head First Design Patterns</h3>
-                <div class="subheading mb-3">Eric Freeman, Elisabeth Freeman, Kathy Sierra e Bert Bates</div>
-                <p>
-                  O livro apresenta os melhores padrões de design para trabalhar com a linguagem Java. 
-                  O livro em português recebeu a tradução de “Use a Cabeça! – Padrões de Projetos design”, 
-                  seguindo a linha de que existem padrões e projetos de design que evitam que o programador 
-                  fique sempre reinventando a roda.
-                </p>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Head First Design Patterns</h3>
+            <div class="subheading mb-3">Eric Freeman, Elisabeth Freeman, Kathy Sierra e Bert Bates</div>
+            <p>
+              O livro apresenta os melhores padrões de design para trabalhar com a linguagem Java.
+              O livro em português recebeu a tradução de “Use a Cabeça! – Padrões de Projetos design”,
+              seguindo a linha de que existem padrões e projetos de design que evitam que o programador
+              fique sempre reinventando a roda.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="calendario">
+      <div class="w-100">
+        <h2 class="mb-5">Calendário de Eventos</h2>
+
+        <div id='loading'>loading...</div>
+
+        <div id='calendar'></div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="comment">
+      <div class="w-100">
+        <h2 class="mb-5">Comentários</h2>
+        <form>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
               </div>
             </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier
-          and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and
-          kayaking.</p>
-        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows,
-          I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements
-          in the front-end web development world.</p>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-
+            <div class="form-group">
+              <label for="inputEmail">E-mail</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="inputAssunto">Assunto</label>
+              <input type="text" class="form-control" id="inputAssunto" placeholder="" required>
+            </div>
+            <div class="form-group">
+              <label for="inputComentario">Comentário</label>
+              <textarea class="form-control" id="inputComentario" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </form>
       </div>
     </section>
 
